@@ -1,0 +1,98 @@
+{
+  "events": [
+    {
+      "type": "diagnostic",
+      "ledger": "1",
+      "ledgerClosedAt": "1970-01-01T00:00:05Z",
+      "id": "0000000004294971393-0000000001",
+      "pagingToken": "0000000004294971393-0000000001",
+      "contractId": "0000000000000000000000000000000000000000000000000000000000000000",
+      "topic": [
+        "AAAADwAAAAdmbl9jYWxsAA==",
+        "AAAADQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==",
+        "AAAADwAAAAlzdG9yZV9jaWQAAAA="
+      ],
+      "value": {
+        "xdr": "AAAADgAAAAlhc2RzYWRzYWQAAAA="
+      }
+    },
+    {
+      "type": "diagnostic",
+      "ledger": "1",
+      "ledgerClosedAt": "1970-01-01T00:00:05Z",
+      "id": "0000000004294971393-0000000002",
+      "pagingToken": "0000000004294971393-0000000002",
+      "contractId": "0000000000000000000000000000000000000000000000000000000000000001",
+      "topic": [
+        "AAAADwAAAAlmbl9yZXR1cm4AAAA=",
+        "AAAADwAAAAlzdG9yZV9jaWQAAAA="
+      ],
+      "value": {
+        "xdr": "AAAADgAAAAlhc2RzYWRzYWQAAAA="
+      }
+    },
+    {
+      "type": "diagnostic",
+      "ledger": "2",
+      "ledgerClosedAt": "1970-01-01T00:00:10Z",
+      "id": "0000000008589938689-0000000001",
+      "pagingToken": "0000000008589938689-0000000001",
+      "contractId": "0000000000000000000000000000000000000000000000000000000000000000",
+      "topic": [
+        "AAAADwAAAAdmbl9jYWxsAA==",
+        "AAAADQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==",
+        "AAAADwAAAAlzdG9yZV9jaWQAAAA="
+      ],
+      "value": {
+        "xdr": "AAAADgAAAAlhc2RzYWRzYWQAAAA="
+      }
+    },
+    {
+      "type": "diagnostic",
+      "ledger": "2",
+      "ledgerClosedAt": "1970-01-01T00:00:10Z",
+      "id": "0000000008589938689-0000000002",
+      "pagingToken": "0000000008589938689-0000000002",
+      "contractId": "0000000000000000000000000000000000000000000000000000000000000001",
+      "topic": [
+        "AAAADwAAAAlmbl9yZXR1cm4AAAA=",
+        "AAAADwAAAAlzdG9yZV9jaWQAAAA="
+      ],
+      "value": {
+        "xdr": "AAAADgAAAAlhc2RzYWRzYWQAAAA="
+      }
+    },
+    {
+      "type": "diagnostic",
+      "ledger": "3",
+      "ledgerClosedAt": "1970-01-01T00:00:15Z",
+      "id": "0000000012884905985-0000000001",
+      "pagingToken": "0000000012884905985-0000000001",
+      "contractId": "0000000000000000000000000000000000000000000000000000000000000000",
+      "topic": [
+        "AAAADwAAAAdmbl9jYWxsAA==",
+        "AAAADQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==",
+        "AAAADwAAAAlzdG9yZV9jaWQAAAA="
+      ],
+      "value": {
+        "xdr": "AAAADgAAAAVtdXRodQAAAA=="
+      }
+    },
+    {
+      "type": "diagnostic",
+      "ledger": "3",
+      "ledgerClosedAt": "1970-01-01T00:00:15Z",
+      "id": "0000000012884905985-0000000002",
+      "pagingToken": "0000000012884905985-0000000002",
+      "contractId": "0000000000000000000000000000000000000000000000000000000000000001",
+      "topic": [
+        "AAAADwAAAAlmbl9yZXR1cm4AAAA=",
+        "AAAADwAAAAlzdG9yZV9jaWQAAAA="
+      ],
+      "value": {
+        "xdr": "AAAADgAAAAVtdXRodQAAAA=="
+      }
+    }
+  ],
+  "latestLedger": 3
+}

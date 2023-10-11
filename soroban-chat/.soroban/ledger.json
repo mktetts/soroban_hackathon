@@ -1,0 +1,143 @@
+{
+  "protocol_version": 20,
+  "sequence_number": 3,
+  "timestamp": 15,
+  "network_id": [
+    154,
+    137,
+    49,
+    25,
+    64,
+    35,
+    197,
+    162,
+    91,
+    112,
+    6,
+    162,
+    23,
+    176,
+    234,
+    89,
+    12,
+    94,
+    174,
+    169,
+    246,
+    198,
+    26,
+    53,
+    105,
+    137,
+    137,
+    155,
+    188,
+    244,
+    120,
+    188
+  ],
+  "base_reserve": 0,
+  "min_persistent_entry_expiration": 4096,
+  "min_temp_entry_expiration": 16,
+  "max_entry_expiration": 6312000,
+  "ledger_entries": [
+    [
+      {
+        "contract_code": {
+          "hash": "d964bbf92f61196b78b6bffdc7a0fa17a305c3ea0500a2eb30eccbd46cc5788c"
+        }
+      },
+      [
+        {
+          "last_modified_ledger_seq": 0,
+          "data": {
+            "contract_code": {
+              "ext": "v0",
+              "hash": "d964bbf92f61196b78b6bffdc7a0fa17a305c3ea0500a2eb30eccbd46cc5788c",
+              "code": "0061736d0100000001160460027e7e017e60037e7e7e017e60017e017e600000020d02016201690000016c015f0001030302020305030100100619037f01418080c0000b7f00418080c0000b7f00418080c0000b073505066d656d6f727902000973746f72655f6369640002015f00030a5f5f646174615f656e6403010b5f5f686561705f6261736503020a3a0235000240200042ff018342c900510d0000000b418080c08000ad4220864204844204108080808000200042021081808080001a20000b02000b0b090100418080c0000b0000430e636f6e747261637473706563763000000000000000000000000973746f72655f63696400000000000001000000000000000363696400000000100000000100000010001e11636f6e7472616374656e766d657461763000000000000000140000003900730e636f6e74726163746d65746176300000000000000005727376657200000000000006312e37332e3000000000000000000008727373646b7665720000003332302e302e302d726332233039393234313366396230356535626662316638373262636539396538396439313239623265363100"
+            }
+          },
+          "ext": "v0"
+        },
+        4096
+      ]
+    ],
+    [
+      {
+        "contract_data": {
+          "contract": {
+            "contract": "0000000000000000000000000000000000000000000000000000000000000001"
+          },
+          "key": "ledger_key_contract_instance",
+          "durability": "persistent"
+        }
+      },
+      [
+        {
+          "last_modified_ledger_seq": 0,
+          "data": {
+            "contract_data": {
+              "ext": "v0",
+              "contract": {
+                "contract": "0000000000000000000000000000000000000000000000000000000000000001"
+              },
+              "key": "ledger_key_contract_instance",
+              "durability": "persistent",
+              "val": {
+                "contract_instance": {
+                  "executable": {
+                    "wasm": "d964bbf92f61196b78b6bffdc7a0fa17a305c3ea0500a2eb30eccbd46cc5788c"
+                  },
+                  "storage": [
+                    {
+                      "key": {
+                        "string": ""
+                      },
+                      "val": {
+                        "string": "muthu"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "ext": "v0"
+        },
+        4096
+      ]
+    ],
+    [
+      {
+        "account": {
+          "account_id": {
+            "public_key_type_ed25519": "d18f0210ff6cc1f2dcf1301fbbd4c30ee11a075820684d471df89d0f1011ea28"
+          }
+        }
+      },
+      [
+        {
+          "last_modified_ledger_seq": 0,
+          "data": {
+            "account": {
+              "account_id": {
+                "public_key_type_ed25519": "d18f0210ff6cc1f2dcf1301fbbd4c30ee11a075820684d471df89d0f1011ea28"
+              },
+              "balance": 0,
+              "seq_num": 0,
+              "num_sub_entries": 0,
+              "inflation_dest": null,
+              "flags": 0,
+              "home_domain": "",
+              "thresholds": "01010101",
+              "signers": [],
+              "ext": "v0"
+            }
+          },
+          "ext": "v0"
+        },
+        null
+      ]
+    ]
+  ]
+}

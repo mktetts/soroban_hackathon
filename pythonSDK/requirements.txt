@@ -1,0 +1,16 @@
+flask
+python-dotenv
+web3
+requests
+py-solc-x
+flask-cors
+pycln
+black
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+pinatapy-vourhey
+pinata
+pickle5

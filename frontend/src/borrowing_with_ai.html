@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Dashboard | Soroban DeFi</title>
+	<meta name="viewport" content="width=device-width, initial-scale=0.5">
+	<!-- App favicon -->
+	<!-- <link rel="shortcut icon" href="../images/favicon.ico"> -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- App css -->
+	<link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+	<link href="../assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
+
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+
+<body class="loading" data-layout="topnav"
+	data-layout-config='{"layoutBoxed":false,"darkMode":false,"showRightSidebarOnStart": true}'>
+	<div id="app">
+		<div class="wrapper">
+
+
+
+			<div class="content-page">
+				<div class="content">
+					<!-- Topbar Start -->
+					<div class="navbar-custom topnav-navbar">
+						<div class="container-fluid">
+
+							<!-- LOGO -->
+							<a href="" class="topnav-logo">
+								<span class="topnav-logo-lg">
+									<img src="../assets/images/soroban.png" alt="" height="66">
+								</span>
+								<!--  -->
+							</a>
+
+							<ul class="list-unstyled topbar-menu float-end mb-0">
+
+
+
+								<li class="dropdown notification-list">
+									<a class="nav-link dropdown-toggle nav-user arrow-none me-0"
+										data-bs-toggle="dropdown" id="topbar-userdrop" href="#" role="button"
+										aria-haspopup="true" aria-expanded="false">
+										<span class="account-user-avatar">
+											<img src="../assets/images/users/avatar-1.jpg" alt="user-image"
+												class="rounded-circle">
+										</span>
+										<span>
+											<span class="account-user-name">Soeng Souy</span>
+											<span class="account-position">Founder</span>
+										</span>
+									</a>
+									<div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown"
+										aria-labelledby="topbar-userdrop">
+										<!-- item-->
+										<div class=" dropdown-header noti-title">
+											<h6 class="text-overflow m-0">Welcome !</h6>
+										</div>
+
+										<!-- item-->
+										<a href="javascript:void(0);" class="dropdown-item notify-item">
+											<i class="mdi mdi-account-circle me-1"></i>
+											<span>My Account</span>
+										</a>
+
+									</div>
+								</li>
+
+							</ul>
+
+						</div>
+					</div>
+					<!-- end Topbar -->
+
+					<div class="topnav">
+						<div class="container-fluid">
+							<nav class="navbar navbar-dark navbar-expand-lg topnav-menu">
+
+								<div class="collapse navbar-collapse" id="topnav-menu-content">
+									<ul class="navbar-nav">
+										<li class="nav-item">
+                                            <a href="init.html" class="nav-link">Init</a>
+                                        </li>
+										<li class="nav-item">
+											<a href="dashboard.html" class="nav-link">Dashboard</a>
+										</li>
+										
+										<li class="nav-item">
+											<a href="borrowing_with_ai.html" class="nav-link">Borrowing with AI</a>
+										</li>
+										<li class="nav-item">
+											<a href="chat.html" class="nav-link">Chat</a>
+										</li>
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+
+
+
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-10">
+								<div class="page-title-box">
+									<h4 class="page-title">Borrowing with AI</h4>
+								</div>
+							</div>
+							
+						</div>
+						<div class="row">
+                            <div class="col-4">
+								<div class="mb-3" style="width:350px;">
+									<label for="simpleinput" class="form-label">Enter your Secret Key</label>
+									<input type="text" id="simpleinput" class="form-control" v-model="secretkey">
+								</div>
+							</div>
+							<div class="col-4">
+								<div class="mb-3" style="width:350px;">
+									<label for="simpleinput" class="form-label">Enter amount of token to borrow</label>
+									<input type="text" id="simpleinput" class="form-control" v-model="amount">
+								</div>
+                              
+                            </div> <!-- end col-->
+							<div class="col-4">
+								<div class="page-title" style="margin-top: 30px;">
+									<button type="button" class="btn btn-primary" @click="borrow()">Borrow</button>
+								</div>
+                              
+                            </div> <!-- end col-->
+                        </div>
+						
+                        <div v-if="approved">
+                            <h3>Note : This part is actively shown for demo purpose. In real time, if the borrowing is approved by AI, the transfer of tokens automatically done by smart contracts.</h3>
+                            <br>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="mb-3" style="width:350px;">
+                                        <label for="simpleinput" class="form-label">Enter your Secret Key</label>
+                                        <input type="text" id="simpleinput" class="form-control" v-model="secretkey">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="mb-3" style="width:350px;">
+                                        <label for="simpleinput" class="form-label">Enter Contract Id</label>
+                                        <input type="text" id="simpleinput" class="form-control" v-model="contractId">
+                                    </div>
+                                  
+                                </div> <!-- end col-->
+                                <div class="col-4">
+                                    <div class="mb-3" style="width:350px;">
+                                        <label for="simpleinput" class="form-label">Enter address to lend</label>
+                                        <input type="text" id="simpleinput" class="form-control" v-model="toAddress">
+                                    </div>
+                                  
+                                </div> <!-- end col-->
+                                <div class="col-4">
+                                    <div class="mb-3" style="width:350px;">
+                                        <label for="simpleinput" class="form-label">Enter amount of token to lend</label>
+                                        <input type="text" id="simpleinput" class="form-control" v-model="amount">
+                                    </div>
+                                  
+                                </div> <!-- end col-->
+                                <div class="col-4">
+                                    <div class="page-title" style="margin-top: 90px;">
+                                        <button type="button" class="btn btn-primary" @click="lend()">Lend Tokens</button>
+                                    </div>
+                                  
+                                </div> <!-- end col-->
+                            </div>
+                        </div>
+
+						
+
+						
+
+						<div class="d-flex justify-content-center align-items-center" v-if="alert">
+							<div  class="alert alert-primary" role="alert" style="width: 300px;">
+								<p>{{message}}</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+			<!-- end page -->
+
+
+		</div>
+	</div>
+
+	<!-- bundle -->
+	<script type="text/javascript" src="../assets/js/vendor.min.js"></script>
+	<script type="text/javascript" src="../assets/js/app.min.js"></script>
+	<script type="module">
+		var app = new Vue({
+			el: "#app",
+			data: {
+				amount : "",
+                secretkey : "",
+				contractId : "",
+				alert : false,
+                approved : false,
+                message : "",
+                toAddress : ""
+			},
+			mounted() {
+				
+			},
+			methods: {
+				async borrow(){
+                    this.alert = true
+                    this.message = "Checking for eligibility"
+                    const params = {
+                        secretkey : this.secretkey,
+                        amount : this.amount,
+                    };
+
+                    await axios.post('http://127.0.0.1:3000/api/borrow', {
+                        params : params
+                    })
+                        .then(response => {
+                            console.log(response.data)
+                            if(response.data.result === "Approved")
+                            {
+                                this.approved = true
+                                this.message = "You are approved"
+                            }
+                            else
+                                this.message = "You are not eligible"
+                            // this.usdtoken = response.data.result
+                        })
+                        .catch(error => {
+                            console.error('Error fetching data:', error);
+                        });
+
+						setTimeout(() =>{
+                                this.alert = false
+                            }, 3000)
+                },
+                async lend(){
+                    this.alert = true
+                    this.message = "Processing lending...."
+                    const params = {
+                        secretkey : this.secretkey,
+                        amount : this.amount,
+                        contractId : this.contractId,
+                        toAddress : this.toAddress
+                    };
+
+                    await axios.post('http://127.0.0.1:3000/api/lend', {
+                        params : params
+                    })
+                        .then(response => {
+                            console.log(response.data)
+                            if(response.data.result === "success")
+                            {
+                                this.message = "Success"
+                            }
+                            else{}
+                                // this.message = "Failed"
+                            // this.usdtoken = response.data.result
+                        })
+                        .catch(error => {
+                            console.error('Error fetching data:', error);
+                        });
+
+						setTimeout(() =>{
+                                this.alert = false
+                            }, 3000)
+                }
+
+
+			},
+		})    
+	</script>
+
+
+
+</body>
+
+</head>
